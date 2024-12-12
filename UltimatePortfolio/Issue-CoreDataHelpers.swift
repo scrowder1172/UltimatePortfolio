@@ -34,6 +34,14 @@ extension Issue {
         return result.sorted()
     }
     
+    var issueStatus: String {
+        if completed {
+            return "Closed"
+        } else {
+            return "Open"
+        }
+    }
+    
     static var example: Issue {
         let controller: DataController = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
@@ -57,6 +65,16 @@ extension Issue: Comparable {
             return lhs.issueCreationDate < rhs.issueCreationDate
         } else {
             return left < right
+        }
+    }
+    
+    var issueTagsList: String {
+        guard let tags else { return "No tags" }
+        
+        if tags.count == 0 {
+            return "No tags"
+        } else {
+            return issueTags.map(\.tagName).formatted()
         }
     }
 }

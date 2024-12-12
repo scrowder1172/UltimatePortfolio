@@ -13,6 +13,9 @@ import CoreData
 class DataController: ObservableObject {
     
     @Published var selectedFilter: Filter? = Filter.all
+    @Published var selectedIssue: Issue?
+    
+    private var saveTask: Task<Void, Error>?
     
     let container: NSPersistentCloudKitContainer
     
@@ -76,6 +79,16 @@ class DataController: ObservableObject {
         }
     }
     
+    func queueSave() {
+        saveTask?.cancel()
+        
+        saveTask = Task { @MainActor in
+            try await Task.sleep(for: .seconds(3))
+            save()
+        }
+        
+    }
+    
     func delete(_ object: NSManagedObject) {
         objectWillChange.send()
         container.viewContext.delete(object)
@@ -108,5 +121,15 @@ class DataController: ObservableObject {
     
     func remoteStoreChanged(_ notification: Notification) {
         objectWillChange.send()
+    }
+    
+    func missingTags(from issue: Issue) -> [Tag] {
+        let request = Tag.fetchRequest()
+        let allTags = (try? container.viewContext.fetch(request)) ?? []
+        
+        let allTagsSet = Set(allTags)
+        let difference = allTagsSet.symmetricDifference(issue.issueTags)
+        
+        return difference.sorted()
     }
 }
