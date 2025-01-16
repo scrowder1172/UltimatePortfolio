@@ -15,6 +15,8 @@ class DataController: ObservableObject {
     @Published var selectedFilter: Filter? = Filter.all
     @Published var selectedIssue: Issue?
     
+    @Published var filterText: String = ""
+    
     private var saveTask: Task<Void, Error>?
     
     let container: NSPersistentCloudKitContainer
@@ -135,16 +137,28 @@ class DataController: ObservableObject {
     
     func issuesForSelectedFilter() -> [Issue] {
         let filter = selectedFilter ?? .all
-        var allIssues: [Issue]
+        var predicates = [NSPredicate]()
         
         if let tag = filter.tag {
-            allIssues = tag.issues?.allObjects as? [Issue] ?? []
+            let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
+            predicates.append(tagPredicate)
         } else {
-            let request = Issue.fetchRequest()
-            request.predicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
-            allIssues = (try? container.viewContext.fetch(request)) ?? []
+            let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
+            predicates.append(datePredicate)
         }
         
+        let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
+        if trimmedFilterText.isEmpty == false {
+            let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
+            let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
+            let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
+            predicates.append(combinedPredicate)
+        }
+        
+        let request = Issue.fetchRequest()
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        
+        let allIssues = (try? container.viewContext.fetch(request)) ?? []
         return allIssues.sorted()
     }
 }
