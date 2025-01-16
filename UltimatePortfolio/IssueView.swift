@@ -39,9 +39,7 @@ struct IssueView: View {
                     // show selected tags first
                     ForEach(issue.issueTags) { tag in
                         Button {
-                            // Need to find this method...
-                            // Core Data functionality that should be available???
-                            //issue.removeFromTags(tag)
+                            issue.removeFromTags(tag)
                         } label: {
                             Label(tag.tagName, systemImage: "checkmark")
                         }
@@ -56,9 +54,7 @@ struct IssueView: View {
                         Section("Add Tags") {
                             ForEach(otherTags) { tag in
                                 Button(tag.tagName) {
-                                    // Need to find this method definition...
-                                    // Core Data functionality that should be available???
-                                    // issue.addToTags(tag)
+                                    issue.addToTags(tag)
                                 }
                             }
                         }
