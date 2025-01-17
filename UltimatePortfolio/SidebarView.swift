@@ -21,6 +21,8 @@ struct SidebarView: View {
     @State private var renamingTag: Bool = false
     @State private var tagName: String = ""
     
+    @State private var showingAwards: Bool = false
+    
     var tagFilters: [Filter] {
         tags.map { tag in
             Filter(id: tag.tagID, name: tag.tagName, icon: "tag", tag: tag)
@@ -59,6 +61,12 @@ struct SidebarView: View {
                 Label("Add tag", systemImage: "plus")
             }
             
+            Button {
+                showingAwards.toggle()
+            } label: {
+                Label("Show awards", systemImage: "rosette")
+            }
+            
             #if DEBUG
             Button {
                 dataController.deleteAll()
@@ -73,6 +81,7 @@ struct SidebarView: View {
             Button("Cancel", role: .cancel) {}
             TextField("New name", text: $tagName)
         }
+        .sheet(isPresented: $showingAwards, content: AwardsView.init)
     }
     
     func delete(_ offsets: IndexSet) {
