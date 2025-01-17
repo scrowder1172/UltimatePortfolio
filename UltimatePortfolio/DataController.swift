@@ -10,6 +10,15 @@
 
 import CoreData
 
+enum SortType: String {
+    case dateCreated = "creationDate"
+    case dateModified = "modificationDate"
+}
+
+enum Status {
+    case all, open, closed
+}
+
 class DataController: ObservableObject {
     
     @Published var selectedFilter: Filter? = Filter.all
@@ -17,6 +26,12 @@ class DataController: ObservableObject {
     
     @Published var filterText: String = ""
     @Published var filterTokens = [Tag]()
+    
+    @Published var filterEnabled: Bool = false
+    @Published var filterPriority: Int = -1
+    @Published var filterStatus: Status = .all
+    @Published var sortType: SortType = .dateCreated
+    @Published var sortNewestFirst: Bool = true
     
     private var saveTask: Task<Void, Error>?
     
@@ -179,9 +194,22 @@ class DataController: ObservableObject {
             
         }
         
+        if filterEnabled {
+            if filterPriority >= 0 {
+                let priorityFilter = NSPredicate(format: "priority = %d", filterPriority)
+                predicates.append(priorityFilter)
+            }
+            
+            if filterStatus != .all {
+                let lookForClosed = filterStatus == .closed
+                let statusFilter = NSPredicate(format: "completed = %@", NSNumber(value: lookForClosed))
+                predicates.append(statusFilter)
+            }
+        }
+        
         let request = Issue.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
-        
+        request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
         return allIssues.sorted()
     }
