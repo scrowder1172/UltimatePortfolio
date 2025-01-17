@@ -104,6 +104,7 @@ class DataController: ObservableObject {
     
     func save() {
         do {
+            saveTask?.cancel()
             if container.viewContext.hasChanges {
                 try container.viewContext.save()
             }
@@ -191,7 +192,6 @@ class DataController: ObservableObject {
                 let tokenPredicate = NSPredicate(format: "tags CONTAINS %@", filterToken)
                 predicates.append(tokenPredicate)
             }
-            
         }
         
         if filterEnabled {
@@ -211,7 +211,7 @@ class DataController: ObservableObject {
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         request.sortDescriptors = [NSSortDescriptor(key: sortType.rawValue, ascending: sortNewestFirst)]
         let allIssues = (try? container.viewContext.fetch(request)) ?? []
-        return allIssues.sorted()
+        return allIssues
     }
     
     func newTag() {
