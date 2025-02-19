@@ -7,7 +7,6 @@
 // Copyright © Playful Logic Studios, LLC 2024. All rights reserved.
 // 
 
-
 import SwiftUI
 
 struct ContentView: View {

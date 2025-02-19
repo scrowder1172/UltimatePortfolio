@@ -7,7 +7,6 @@
 // Copyright © Playful Logic Studios, LLC 2025. All rights reserved.
 // 
 
-
 import Foundation
 
 struct Award: Decodable, Identifiable {

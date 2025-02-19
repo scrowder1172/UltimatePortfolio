@@ -11,15 +11,15 @@
 import SwiftUI
 
 struct SidebarViewToolbar: View {
-    
+
     @EnvironmentObject var dataController: DataController
     @State private var showingAwards: Bool = false
-    
+
     var body: some View {
         Button(action: dataController.newTag) {
             Label("Add tag", systemImage: "plus")
         }
-        
+
         Button {
             showingAwards.toggle()
         } label: {

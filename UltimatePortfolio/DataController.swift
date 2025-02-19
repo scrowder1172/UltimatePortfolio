@@ -7,7 +7,6 @@
 // Copyright © Playful Logic Studios, LLC 2024. All rights reserved.
 // 
 
-
 import CoreData
 
 enum SortType: String {
@@ -66,10 +65,18 @@ class DataController: ObservableObject {
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
-        container.persistentStoreDescriptions.first?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange, object: container.persistentStoreCoordinator, queue: .main, using: remoteStoreChanged)
+        container.persistentStoreDescriptions.first?.setOption(
+            true as NSNumber,
+            forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
+        )
+        NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange,
+            object: container.persistentStoreCoordinator,
+            queue: .main,
+            using: remoteStoreChanged
+        )
         
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
@@ -79,15 +86,15 @@ class DataController: ObservableObject {
     func createSampleData() {
         let viewContext = container.viewContext
         
-        for i in 1...5 {
+        for tagCounter in 1...5 {
             let tag = Tag(context: viewContext)
             tag.id = UUID()
-            tag.name = "Tag \(i)"
+            tag.name = "Tag \(tagCounter)"
             
-            for j in 1...10 {
+            for issueCounter in 1...10 {
                 let issue = Issue(context: viewContext)
-                issue.title = "Issue \(i)-\(j)"
-                issue.content = "Content for issue \(i)-\(j)"
+                issue.title = "Issue \(tagCounter)-\(issueCounter)"
+                issue.content = "Content for issue \(tagCounter)-\(issueCounter)"
                 issue.creationDate = .now
                 issue.completed = Bool.random()
                 issue.priority = Int16.random(in: 0...2)
@@ -149,28 +156,28 @@ class DataController: ObservableObject {
         
         let request2: NSFetchRequest<NSFetchRequestResult> = Issue.fetchRequest()
         delete(request2)
-        
+
         save()
     }
-    
+
     func remoteStoreChanged(_ notification: Notification) {
         objectWillChange.send()
     }
-    
+
     func missingTags(from issue: Issue) -> [Tag] {
         let request = Tag.fetchRequest()
         let allTags = (try? container.viewContext.fetch(request)) ?? []
-        
+
         let allTagsSet = Set(allTags)
         let difference = allTagsSet.symmetricDifference(issue.issueTags)
-        
+
         return difference.sorted()
     }
-    
+
     func issuesForSelectedFilter() -> [Issue] {
         let filter = selectedFilter ?? .all
         var predicates = [NSPredicate]()
-        
+
         if let tag = filter.tag {
             let tagPredicate = NSPredicate(format: "tags CONTAINS %@", tag)
             predicates.append(tagPredicate)
@@ -178,12 +185,16 @@ class DataController: ObservableObject {
             let datePredicate = NSPredicate(format: "modificationDate > %@", filter.minModificationDate as NSDate)
             predicates.append(datePredicate)
         }
-        
+
         let trimmedFilterText = filterText.trimmingCharacters(in: .whitespaces)
         if trimmedFilterText.isEmpty == false {
             let titlePredicate = NSPredicate(format: "title CONTAINS[c] %@", trimmedFilterText)
             let contentPredicate = NSPredicate(format: "content CONTAINS[c] %@", trimmedFilterText)
-            let combinedPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
+
+            let combinedPredicate = NSCompoundPredicate(
+                orPredicateWithSubpredicates: [titlePredicate, contentPredicate]
+            )
+
             predicates.append(combinedPredicate)
         }
         
