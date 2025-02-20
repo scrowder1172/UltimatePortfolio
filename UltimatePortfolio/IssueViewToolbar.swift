@@ -35,6 +35,13 @@ struct IssueViewToolbar: View {
                     systemImage: "bubble.left.and.exclamationmark.bubble.right.fill"
                 )
             }
+            .sensoryFeedback(trigger: issue.completed) { oldValue, newValue in
+                if newValue {
+                    .success
+                } else {
+                    nil
+                }
+            }
             
             Divider()
             
