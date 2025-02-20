@@ -42,9 +42,7 @@ extension Issue {
         }
     }
     
-    var issueFormattedCreationDate: String {
-        issueCreationDate.formatted(date: .numeric, time: .omitted)
-    }
+    
     
     static var example: Issue {
         let controller: DataController = DataController(inMemory: true)
