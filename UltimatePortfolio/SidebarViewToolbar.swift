@@ -14,10 +14,14 @@ struct SidebarViewToolbar: View {
 
     @EnvironmentObject var dataController: DataController
     @State private var showingAwards: Bool = false
+    @State private var showingStore: Bool = false
 
     var body: some View {
-        Button(action: dataController.newTag) {
+        Button(action: tryNewTag) {
             Label("Add tag", systemImage: "plus")
+        }
+        .sheet(isPresented: $showingStore) {
+            StoreView()
         }
 
         Button {
@@ -35,6 +39,12 @@ struct SidebarViewToolbar: View {
             Label("ADD SAMPLES", systemImage: "flame")
         }
         #endif
+    }
+    
+    func tryNewTag() {
+        if dataController.newTag() == false {
+            showingStore = true
+        }
     }
 }
 
