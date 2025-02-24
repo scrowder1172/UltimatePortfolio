@@ -10,6 +10,7 @@
 import CoreData
 import StoreKit
 import SwiftUI
+import WidgetKit
 
 enum SortType: String {
     case dateCreated = "creationDate"
@@ -102,7 +103,15 @@ class DataController: ObservableObject {
         // For testing and previewing purposes, we create a temporary
         // in-memory database by writing to /dev/null so our data is
         // destroyed after the app finishes running.
-        if inMemory { container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null") }
+        if inMemory {
+            container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
+        } else {
+            let groupID = "group.com.playfullogic.UltimatePortfolio"
+            
+            if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+                container.persistentStoreDescriptions.first?.url = url.appending(path: "Main.sqlite")
+            }
+        }
         
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
@@ -115,6 +124,11 @@ class DataController: ObservableObject {
             forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
         )
         
+        container.persistentStoreDescriptions.first?.setOption(
+            true as NSNumber,
+            forKey: NSPersistentHistoryTrackingKey
+        )
+        
         NotificationCenter.default.addObserver(
             forName: .NSPersistentStoreRemoteChange,
             object: container.persistentStoreCoordinator,
@@ -122,7 +136,9 @@ class DataController: ObservableObject {
             using: remoteStoreChanged
         )
         
-        container.loadPersistentStores { [weak self] _, error in
+        container.loadPersistentStores {
+            [weak self] _,
+            error in
             if let error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
@@ -131,7 +147,10 @@ class DataController: ObservableObject {
                 description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
                 
                 if let coordinator = self?.container.persistentStoreCoordinator {
-                    self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(forStoreWith: description, coordinator: coordinator)
+                    self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
+                        forStoreWith: description,
+                        coordinator: coordinator
+                    )
                     
                     self?.spotlightDelegate?.startSpotlightIndexing()
                 }
@@ -182,6 +201,7 @@ class DataController: ObservableObject {
             saveTask?.cancel()
             if container.viewContext.hasChanges {
                 try container.viewContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
             }
         } catch {
             print("Error saving: \(error.localizedDescription)")
@@ -340,32 +360,7 @@ class DataController: ObservableObject {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
     
-    func hasEarned(award: Award) -> Bool {
-        switch award.criterion {
-        case "issues":
-            // return true if added XXX issues
-            let fetchRequest = Issue.fetchRequest()
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-        case "closed":
-            // return true if they closed a certain number of issues
-            let fetchRequest = Issue.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "completed = true")
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-        case "tags":
-            // return true if they created a certain number of tags
-            let fetchRequest = Tag.fetchRequest()
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-        case "unlock":
-            return fullVersionUnlocked
-        default:
-            // an unknown award criterion; this should never be allowed
-//            fatalError("Unknown award criterion: \(award.criterion)")
-            return false
-        }
-    }
+
     
     func issue(with uniqueIdentifier: String) -> Issue? {
         guard let url = URL(string: uniqueIdentifier) else {
@@ -377,5 +372,22 @@ class DataController: ObservableObject {
         }
         
         return try? container.viewContext.existingObject(with: id) as? Issue
+    }
+    
+    func fetchRequestForTopIssues(count: Int) -> NSFetchRequest<Issue> {
+        let request = Issue.fetchRequest()
+        request.predicate = NSPredicate(format: "completed = false")
+        
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Issue.priority, ascending: false)
+        ]
+        
+        request.fetchLimit = count
+        
+        return request
+    }
+    
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
 }
