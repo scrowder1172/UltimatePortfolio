@@ -74,6 +74,7 @@
 		52B88B642D6CD4F8008ACECB /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"/Localized: Localizable.strings",
 				"DataController-StoreKit.swift",
 				DataController.swift,
 				Filter.swift,
