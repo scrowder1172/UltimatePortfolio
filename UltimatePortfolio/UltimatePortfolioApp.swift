@@ -16,6 +16,8 @@ struct UltimatePortfolioApp: App {
     @StateObject var dataController = DataController()
     @Environment(\.scenePhase) var scenePhase
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             NavigationSplitView {

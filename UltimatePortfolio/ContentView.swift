@@ -33,6 +33,7 @@ struct ContentView: View {
             ContentViewToolbar()
         }
         .onAppear(perform: askForReview)
+        .onOpenURL(perform: openURL)
     }
     
     init(dataController: DataController) {
@@ -44,6 +45,12 @@ struct ContentView: View {
     func askForReview() {
         if viewModel.shouldRequestReview {
             requestReview()
+        }
+    }
+    
+    func openURL(_ url: URL) {
+        if url.absoluteString.contains("newIssue") {
+            viewModel.dataController.newIssue()
         }
     }
 }
