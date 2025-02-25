@@ -10,6 +10,7 @@
 		528D8D922D6D22A20084C6D0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B88B4F2D6CD40D008ACECB /* WidgetKit.framework */; };
 		528D8D932D6D22A20084C6D0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B88B512D6CD40D008ACECB /* SwiftUI.framework */; };
 		528D8D9F2D6D22A40084C6D0 /* PortfolioWidgetMacExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 528D8D912D6D22A20084C6D0 /* PortfolioWidgetMacExtension.appex */; platformFilters = (macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		528D8DE22D6E33960084C6D0 /* UPAWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 528D8DBF2D6E33950084C6D0 /* UPAWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52B88B3C2D67E42A008ACECB /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 52B88B3B2D67E42A008ACECB /* Configuration.storekit */; };
 		52B88B502D6CD40D008ACECB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B88B4F2D6CD40D008ACECB /* WidgetKit.framework */; };
 		52B88B522D6CD40D008ACECB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B88B512D6CD40D008ACECB /* SwiftUI.framework */; };
@@ -31,6 +32,27 @@
 			remoteGlobalIDString = 528D8D902D6D22A20084C6D0;
 			remoteInfo = PortfolioWidgetMacExtension;
 		};
+		528D8DCF2D6E33960084C6D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52370D922CE522C800804D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 528D8DBE2D6E33950084C6D0;
+			remoteInfo = "UPAWatch Watch App";
+		};
+		528D8DD92D6E33960084C6D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52370D922CE522C800804D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 528D8DBE2D6E33950084C6D0;
+			remoteInfo = "UPAWatch Watch App";
+		};
+		528D8DE02D6E33960084C6D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52370D922CE522C800804D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 528D8DBE2D6E33950084C6D0;
+			remoteInfo = "UPAWatch Watch App";
+		};
 		52B88B5B2D6CD40F008ACECB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52370D922CE522C800804D94 /* Project object */;
@@ -48,6 +70,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		528D8DE62D6E33960084C6D0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				528D8DE22D6E33960084C6D0 /* UPAWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52B88B622D6CD40F008ACECB /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,6 +99,9 @@
 		522A5DEF2D667F2400D72572 /* UltimatePortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52370D9A2CE522C800804D94 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528D8D912D6D22A20084C6D0 /* PortfolioWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PortfolioWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		528D8DBF2D6E33950084C6D0 /* UPAWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPAWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		528D8DCE2D6E33960084C6D0 /* UPAWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UPAWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		528D8DD82D6E33960084C6D0 /* UPAWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UPAWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B88B3B2D67E42A008ACECB /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		52B88B4D2D6CD40D008ACECB /* PortfolioWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PortfolioWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B88B4F2D6CD40D008ACECB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -103,6 +139,51 @@
 				SimplePortfolioWidget.swift,
 			);
 			target = 528D8D902D6D22A20084C6D0 /* PortfolioWidgetMacExtension */;
+		};
+		528D8DEF2D6E33FC0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "UPAWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"/Localized: Awards/Awards.json",
+				"/Localized: Localization/Localizable.strings",
+				AppDelegate.swift,
+				Assets.xcassets,
+				Awards/Award.swift,
+				Awards/AwardsView.swift,
+				Colors.xcassets,
+				"DataController-Awards.swift",
+				"DataController-Notifications.swift",
+				"DataController-StoreKit.swift",
+				DataController.swift,
+				Editing/DetailView.swift,
+				Editing/IssueView.swift,
+				Editing/IssueViewToolbar.swift,
+				Editing/NoIssueView.swift,
+				Editing/TagsMenuView.swift,
+				"Extensions/Bundle-Decodable.swift",
+				"Extensions/Issue-CoreDataHelpers.swift",
+				"Extensions/Tag-CoreDataHelpers.swift",
+				Filters/Filter.swift,
+				Filters/SidebarView.swift,
+				Filters/SidebarViewModel.swift,
+				Filters/SidebarViewToolbar.swift,
+				Filters/SmartFilterRow.swift,
+				Filters/UserFilterRow.swift,
+				Issues/ContentView.swift,
+				Issues/ContentViewModel.swift,
+				Issues/ContentViewToolbar.swift,
+				Issues/IssueRow.swift,
+				Issues/IssueRowViewModel.swift,
+				Issues/IssueRowWatch.swift,
+				Main.xcdatamodeld,
+				PlatformAdjustments/InLineNavigationBar.swift,
+				PlatformAdjustments/MacFrame.swift,
+				PlatformAdjustments/NumberBadge.swift,
+				PlatformAdjustments/ToolbarItemPlacement.swift,
+				SceneDelegate.swift,
+				Store/StoreView.swift,
+				UltimatePortfolioApp.swift,
+			);
+			target = 528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */;
 		};
 		52B88B612D6CD40F008ACECB /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -145,6 +226,7 @@
 				52C79ED62CE534CD00778729 /* Exceptions for "UltimatePortfolio" folder in "UltimatePortfolio" target */,
 				52B88B642D6CD4F8008ACECB /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetExtension" target */,
 				528D8DA52D6D231A0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetMacExtension" target */,
+				528D8DEF2D6E33FC0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "UPAWatch Watch App" target */,
 			);
 			path = UltimatePortfolio;
 			sourceTree = "<group>";
@@ -155,6 +237,21 @@
 				528D8DA32D6D22A40084C6D0 /* Exceptions for "PortfolioWidgetMac" folder in "PortfolioWidgetMacExtension" target */,
 			);
 			path = PortfolioWidgetMac;
+			sourceTree = "<group>";
+		};
+		528D8DC02D6E33950084C6D0 /* UPAWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "UPAWatch Watch App";
+			sourceTree = "<group>";
+		};
+		528D8DD12D6E33960084C6D0 /* UPAWatch Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "UPAWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		528D8DDB2D6E33960084C6D0 /* UPAWatch Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "UPAWatch Watch AppUITests";
 			sourceTree = "<group>";
 		};
 		52B88B532D6CD40D008ACECB /* PortfolioWidget */ = {
@@ -197,6 +294,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		528D8DBC2D6E33950084C6D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DCB2D6E33960084C6D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DD52D6E33960084C6D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52B88B4A2D6CD40D008ACECB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +345,9 @@
 				52D42D742D67871C009A6098 /* UltimatePortfolioUITests */,
 				52B88B532D6CD40D008ACECB /* PortfolioWidget */,
 				528D8D942D6D22A20084C6D0 /* PortfolioWidgetMac */,
+				528D8DC02D6E33950084C6D0 /* UPAWatch Watch App */,
+				528D8DD12D6E33960084C6D0 /* UPAWatch Watch AppTests */,
+				528D8DDB2D6E33960084C6D0 /* UPAWatch Watch AppUITests */,
 				52B88B4E2D6CD40D008ACECB /* Frameworks */,
 				52370D9B2CE522C800804D94 /* Products */,
 			);
@@ -240,6 +361,9 @@
 				52D42D732D67871C009A6098 /* UltimatePortfolioUITests.xctest */,
 				52B88B4D2D6CD40D008ACECB /* PortfolioWidgetExtension.appex */,
 				528D8D912D6D22A20084C6D0 /* PortfolioWidgetMacExtension.appex */,
+				528D8DBF2D6E33950084C6D0 /* UPAWatch Watch App.app */,
+				528D8DCE2D6E33960084C6D0 /* UPAWatch Watch AppTests.xctest */,
+				528D8DD82D6E33960084C6D0 /* UPAWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,12 +412,14 @@
 				52370D982CE522C800804D94 /* Resources */,
 				522A5CA42D664F6C00D72572 /* SwiftLint */,
 				52B88B622D6CD40F008ACECB /* Embed Foundation Extensions */,
+				528D8DE62D6E33960084C6D0 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				52B88B5C2D6CD40F008ACECB /* PBXTargetDependency */,
 				528D8D9E2D6D22A40084C6D0 /* PBXTargetDependency */,
+				528D8DE12D6E33960084C6D0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				52370D9C2CE522C800804D94 /* UltimatePortfolio */,
@@ -326,6 +452,74 @@
 			productName = PortfolioWidgetMacExtension;
 			productReference = 528D8D912D6D22A20084C6D0 /* PortfolioWidgetMacExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 528D8DE32D6E33960084C6D0 /* Build configuration list for PBXNativeTarget "UPAWatch Watch App" */;
+			buildPhases = (
+				528D8DBB2D6E33950084C6D0 /* Sources */,
+				528D8DBC2D6E33950084C6D0 /* Frameworks */,
+				528D8DBD2D6E33950084C6D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				528D8DC02D6E33950084C6D0 /* UPAWatch Watch App */,
+			);
+			name = "UPAWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "UPAWatch Watch App";
+			productReference = 528D8DBF2D6E33950084C6D0 /* UPAWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		528D8DCD2D6E33960084C6D0 /* UPAWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 528D8DE72D6E33960084C6D0 /* Build configuration list for PBXNativeTarget "UPAWatch Watch AppTests" */;
+			buildPhases = (
+				528D8DCA2D6E33960084C6D0 /* Sources */,
+				528D8DCB2D6E33960084C6D0 /* Frameworks */,
+				528D8DCC2D6E33960084C6D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				528D8DD02D6E33960084C6D0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				528D8DD12D6E33960084C6D0 /* UPAWatch Watch AppTests */,
+			);
+			name = "UPAWatch Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "UPAWatch Watch AppTests";
+			productReference = 528D8DCE2D6E33960084C6D0 /* UPAWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		528D8DD72D6E33960084C6D0 /* UPAWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 528D8DEA2D6E33960084C6D0 /* Build configuration list for PBXNativeTarget "UPAWatch Watch AppUITests" */;
+			buildPhases = (
+				528D8DD42D6E33960084C6D0 /* Sources */,
+				528D8DD52D6E33960084C6D0 /* Frameworks */,
+				528D8DD62D6E33960084C6D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				528D8DDA2D6E33960084C6D0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				528D8DDB2D6E33960084C6D0 /* UPAWatch Watch AppUITests */,
+			);
+			name = "UPAWatch Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "UPAWatch Watch AppUITests";
+			productReference = 528D8DD82D6E33960084C6D0 /* UPAWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		52B88B4C2D6CD40D008ACECB /* PortfolioWidgetExtension */ = {
 			isa = PBXNativeTarget;
@@ -392,6 +586,17 @@
 					528D8D902D6D22A20084C6D0 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					528D8DBE2D6E33950084C6D0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					528D8DCD2D6E33960084C6D0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 528D8DBE2D6E33950084C6D0;
+					};
+					528D8DD72D6E33960084C6D0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 528D8DBE2D6E33950084C6D0;
+					};
 					52B88B4C2D6CD40D008ACECB = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -421,6 +626,9 @@
 				52D42D722D67871C009A6098 /* UltimatePortfolioUITests */,
 				52B88B4C2D6CD40D008ACECB /* PortfolioWidgetExtension */,
 				528D8D902D6D22A20084C6D0 /* PortfolioWidgetMacExtension */,
+				528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */,
+				528D8DCD2D6E33960084C6D0 /* UPAWatch Watch AppTests */,
+				528D8DD72D6E33960084C6D0 /* UPAWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -442,6 +650,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		528D8D8F2D6D22A20084C6D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DBD2D6E33950084C6D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DCC2D6E33960084C6D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DD62D6E33960084C6D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,6 +736,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		528D8DBB2D6E33950084C6D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DCA2D6E33960084C6D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528D8DD42D6E33960084C6D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52B88B492D6CD40D008ACECB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,6 +786,22 @@
 			);
 			target = 528D8D902D6D22A20084C6D0 /* PortfolioWidgetMacExtension */;
 			targetProxy = 528D8D9D2D6D22A40084C6D0 /* PBXContainerItemProxy */;
+		};
+		528D8DD02D6E33960084C6D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */;
+			targetProxy = 528D8DCF2D6E33960084C6D0 /* PBXContainerItemProxy */;
+		};
+		528D8DDA2D6E33960084C6D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */;
+			targetProxy = 528D8DD92D6E33960084C6D0 /* PBXContainerItemProxy */;
+		};
+		528D8DE12D6E33960084C6D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */;
+			targetProxy = 528D8DE02D6E33960084C6D0 /* PBXContainerItemProxy */;
 		};
 		52B88B5C2D6CD40F008ACECB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -848,6 +1114,151 @@
 			};
 			name = Release;
 		};
+		528D8DE42D6E33960084C6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "UPAWatch Watch App/UPAWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UPAWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = L97JMB29U2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = UPAWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.playfullogic.UltimatePortfolio;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.playfullogic.UltimatePortfolio.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		528D8DE52D6E33960084C6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "UPAWatch Watch App/UPAWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UPAWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = L97JMB29U2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = UPAWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.playfullogic.UltimatePortfolio;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.playfullogic.UltimatePortfolio.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		528D8DE82D6E33960084C6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L97JMB29U2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.playfullogic.UltimatePortfolio.UPAWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UPAWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UPAWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		528D8DE92D6E33960084C6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L97JMB29U2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.playfullogic.UltimatePortfolio.UPAWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UPAWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UPAWatch Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		528D8DEB2D6E33960084C6D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L97JMB29U2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.playfullogic.UltimatePortfolio.UPAWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "UPAWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		528D8DEC2D6E33960084C6D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L97JMB29U2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.playfullogic.UltimatePortfolio.UPAWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "UPAWatch Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 		52B88B5F2D6CD40F008ACECB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -983,6 +1394,33 @@
 			buildConfigurations = (
 				528D8DA02D6D22A40084C6D0 /* Debug */,
 				528D8DA12D6D22A40084C6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		528D8DE32D6E33960084C6D0 /* Build configuration list for PBXNativeTarget "UPAWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528D8DE42D6E33960084C6D0 /* Debug */,
+				528D8DE52D6E33960084C6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		528D8DE72D6E33960084C6D0 /* Build configuration list for PBXNativeTarget "UPAWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528D8DE82D6E33960084C6D0 /* Debug */,
+				528D8DE92D6E33960084C6D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		528D8DEA2D6E33960084C6D0 /* Build configuration list for PBXNativeTarget "UPAWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528D8DEB2D6E33960084C6D0 /* Debug */,
+				528D8DEC2D6E33960084C6D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

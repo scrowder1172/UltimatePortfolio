@@ -10,35 +10,41 @@
 
 import SwiftUI
 
-struct SidebarViewToolbar: View {
+struct SidebarViewToolbar: ToolbarContent {
 
     @EnvironmentObject var dataController: DataController
     @State private var showingAwards: Bool = false
     @State private var showingStore: Bool = false
 
-    var body: some View {
-        Button(action: tryNewTag) {
-            Label("Add tag", systemImage: "plus")
-        }
-        .sheet(isPresented: $showingStore) {
-            StoreView()
-        }
-        .help("Add tag")
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .automaticOrTrailing) {
+            Button(action: tryNewTag) {
+                Label("Add tag", systemImage: "plus")
+            }
+            .sheet(isPresented: $showingStore) {
+                StoreView()
+            }
+            .help("Add tag")
 
-        Button {
-            showingAwards.toggle()
-        } label: {
-            Label("Show awards", systemImage: "rosette")
         }
-        .sheet(isPresented: $showingAwards, content: AwardsView.init)
-        .help("Show awards")
+        ToolbarItem(placement: .automaticOrLeading) {
+            Button {
+                showingAwards.toggle()
+            } label: {
+                Label("Show awards", systemImage: "rosette")
+            }
+            .sheet(isPresented: $showingAwards, content: AwardsView.init)
+            .help("Show awards")
+        }
         
         #if DEBUG
-        Button {
-            dataController.deleteAll()
-            dataController.createSampleData()
-        } label: {
-            Label("ADD SAMPLES", systemImage: "flame")
+        ToolbarItem(placement: .automatic){
+            Button {
+                dataController.deleteAll()
+                dataController.createSampleData()
+            } label: {
+                Label("ADD SAMPLES", systemImage: "flame")
+            }
         }
         #endif
     }
@@ -48,8 +54,4 @@ struct SidebarViewToolbar: View {
             showingStore = true
         }
     }
-}
-
-#Preview {
-    SidebarViewToolbar()
 }

@@ -51,7 +51,9 @@ class DataController: ObservableObject {
     /// The lone CloudKit container used to store all our data.
     let container: NSPersistentCloudKitContainer
     
+    #if !os(watchOS)
     var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+    #endif
     
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
@@ -146,6 +148,7 @@ class DataController: ObservableObject {
             if let description = self?.container.persistentStoreDescriptions.first {
                 description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
                 
+                #if !os(watchOS)
                 if let coordinator = self?.container.persistentStoreCoordinator {
                     self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
                         forStoreWith: description,
@@ -154,6 +157,7 @@ class DataController: ObservableObject {
                     
                     self?.spotlightDelegate?.startSpotlightIndexing()
                 }
+                #endif
             }
             
 #if DEBUG

@@ -7,7 +7,9 @@
 // Copyright © Playful Logic Studios, LLC 2024. All rights reserved.
 // 
 
+#if canImport(CoreSpotlight)
 import CoreSpotlight
+#endif
 import SwiftUI
 
 @main
@@ -36,14 +38,18 @@ struct UltimatePortfolioApp: App {
                         dataController.save()
                     }
                 }
+            #if canImport(CoreSpotlight)
                 .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
+            #endif
         }
     }
     
+    #if canImport(CoreSpotlight)
     func loadSpotlightItem(_ userActivity: NSUserActivity) {
         if let uniqueIdentifer = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
             dataController.selectedIssue = dataController.issue(with: uniqueIdentifer)
             dataController.selectedFilter = .all
         }
     }
+    #endif
 }

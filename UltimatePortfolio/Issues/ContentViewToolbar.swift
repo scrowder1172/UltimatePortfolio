@@ -13,13 +13,13 @@ struct ContentViewToolbar: View {
     @EnvironmentObject var dataController: DataController
     
     var body: some View {
+        #if !os(watchOS)
         Menu {
             Button(dataController.filterEnabled ? "Turn Filter Off" : "Turn Filter On") {
                 dataController.filterEnabled.toggle()
             }
             
             Divider()
-            
             Menu("Sort By") {
                 Picker("Sort By", selection: $dataController.sortType) {
                     Text("Date Created").tag(SortType.dateCreated)
@@ -37,7 +37,6 @@ struct ContentViewToolbar: View {
                 .pickerStyle(.inline)
                 .labelsHidden()
             }
-            
             Picker("Status", selection: $dataController.filterStatus) {
                 Text("All").tag(Status.all)
                 Text("Open").tag(Status.open)
@@ -57,6 +56,7 @@ struct ContentViewToolbar: View {
                 .symbolVariant(dataController.filterEnabled ? .fill : .none)
         }
         .help("Filter")
+        #endif
         
         Button(action: dataController.newIssue) {
             Label("New Issue", systemImage: "square.and.pencil")
