@@ -10,7 +10,9 @@
 import CoreData
 import StoreKit
 import SwiftUI
+#if canImport(WidgetKit)
 import WidgetKit
+#endif
 
 enum SortType: String {
     case dateCreated = "creationDate"
@@ -207,21 +209,14 @@ class DataController: ObservableObject {
             saveTask?.cancel()
             if container.viewContext.hasChanges {
                 try container.viewContext.save()
+                
+                #if canImport(WidgetKit)
                 WidgetCenter.shared.reloadAllTimelines()
+                #endif
             }
         } catch {
             print("Error saving: \(error.localizedDescription)")
         }
-    }
-    
-    func queueSave() {
-        saveTask?.cancel()
-        
-        saveTask = Task { @MainActor in
-            try await Task.sleep(for: .seconds(3))
-            save()
-        }
-        
     }
     
     func delete(_ object: NSManagedObject) {
