@@ -123,6 +123,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"DataController-StoreKit.swift",
+				"DataController-Testing.swift",
 				DataController.swift,
 				"Extensions/Issue-CoreDataHelpers.swift",
 				"Extensions/Tag-CoreDataHelpers.swift",
@@ -153,6 +154,7 @@
 				"DataController-Awards.swift",
 				"DataController-Notifications.swift",
 				"DataController-StoreKit.swift",
+				"DataController-Testing.swift",
 				DataController.swift,
 				Editing/DetailView.swift,
 				Editing/IssueView.swift,
@@ -197,6 +199,7 @@
 			membershipExceptions = (
 				"/Localized: Localization/Localizable.strings",
 				"DataController-StoreKit.swift",
+				"DataController-Testing.swift",
 				DataController.swift,
 				"Extensions/Issue-CoreDataHelpers.swift",
 				"Extensions/Tag-CoreDataHelpers.swift",
@@ -574,7 +577,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					522A5DEE2D667F2400D72572 = {
 						CreatedOnToolsVersion = 16.2;
@@ -893,6 +896,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -955,6 +959,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -983,6 +988,7 @@
 				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = L97JMB29U2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1024,6 +1030,7 @@
 				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = L97JMB29U2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1064,6 +1071,7 @@
 				CODE_SIGN_ENTITLEMENTS = PortfolioWidgetMac/PortfolioWidgetMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = L97JMB29U2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1094,6 +1102,7 @@
 				CODE_SIGN_ENTITLEMENTS = PortfolioWidgetMac/PortfolioWidgetMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = L97JMB29U2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
