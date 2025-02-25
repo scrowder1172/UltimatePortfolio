@@ -43,6 +43,11 @@
 "Medium" = "Közepes";
 "High" = "Magas";
 
+"Status" = "Állapot";
+"Sort Order" = "Rendezési sorrend";
+"Title" = "Cím";
+"Description" = "Leírás";
+
 /* Create a new issue */
 "New Issue" = "Új probléma";
 
@@ -88,7 +93,7 @@
 "Awards" = "Díjak";
 "Locked" = "Zárolt";
 "Unlocked: %@" = "Feloldott: %@";
-
+"Close" = "Bezár";
 
 
 /* DATA */

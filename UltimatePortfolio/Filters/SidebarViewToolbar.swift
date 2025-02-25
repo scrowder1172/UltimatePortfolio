@@ -23,6 +23,7 @@ struct SidebarViewToolbar: View {
         .sheet(isPresented: $showingStore) {
             StoreView()
         }
+        .help("Add tag")
 
         Button {
             showingAwards.toggle()
@@ -30,6 +31,7 @@ struct SidebarViewToolbar: View {
             Label("Show awards", systemImage: "rosette")
         }
         .sheet(isPresented: $showingAwards, content: AwardsView.init)
+        .help("Show awards")
         
         #if DEBUG
         Button {
