@@ -112,108 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		528D8DA32D6D22A40084C6D0 /* Exceptions for "PortfolioWidgetMac" folder in "PortfolioWidgetMacExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 528D8D902D6D22A20084C6D0 /* PortfolioWidgetMacExtension */;
-		};
-		528D8DA52D6D231A0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetMacExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"DataController-StoreKit.swift",
-				"DataController-Testing.swift",
-				DataController.swift,
-				"Extensions/Issue-CoreDataHelpers.swift",
-				"Extensions/Tag-CoreDataHelpers.swift",
-				Filters/Filter.swift,
-				Main.xcdatamodeld,
-			);
-			target = 528D8D902D6D22A20084C6D0 /* PortfolioWidgetMacExtension */;
-		};
-		528D8DAE2D6D234B0084C6D0 /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetMacExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ComplexPortfolioWidget.swift,
-				PortfolioWidgetBundle.swift,
-				SimplePortfolioWidget.swift,
-			);
-			target = 528D8D902D6D22A20084C6D0 /* PortfolioWidgetMacExtension */;
-		};
 		528D8DEF2D6E33FC0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "UPAWatch Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Localized: Awards/Awards.json",
-				"/Localized: Localization/Localizable.strings",
-				AppDelegate.swift,
 				Assets.xcassets,
-				Awards/Award.swift,
-				Awards/AwardsView.swift,
-				Colors.xcassets,
-				"DataController-Awards.swift",
-				"DataController-Notifications.swift",
-				"DataController-StoreKit.swift",
-				"DataController-Testing.swift",
-				DataController.swift,
-				Editing/DetailView.swift,
-				Editing/IssueView.swift,
-				Editing/IssueViewToolbar.swift,
-				Editing/NoIssueView.swift,
-				Editing/TagsMenuView.swift,
-				"Extensions/Bundle-Decodable.swift",
-				"Extensions/Issue-CoreDataHelpers.swift",
-				"Extensions/Tag-CoreDataHelpers.swift",
-				Filters/Filter.swift,
-				Filters/SidebarView.swift,
-				Filters/SidebarViewModel.swift,
-				Filters/SidebarViewToolbar.swift,
-				Filters/SmartFilterRow.swift,
-				Filters/UserFilterRow.swift,
-				Issues/ContentView.swift,
-				Issues/ContentViewModel.swift,
-				Issues/ContentViewToolbar.swift,
-				Issues/IssueRow.swift,
-				Issues/IssueRowViewModel.swift,
-				Issues/IssueRowWatch.swift,
-				Main.xcdatamodeld,
-				PlatformAdjustments/InLineNavigationBar.swift,
-				PlatformAdjustments/MacFrame.swift,
-				PlatformAdjustments/NumberBadge.swift,
-				PlatformAdjustments/ToolbarItemPlacement.swift,
-				SceneDelegate.swift,
-				Store/StoreView.swift,
 				UltimatePortfolioApp.swift,
 			);
 			target = 528D8DBE2D6E33950084C6D0 /* UPAWatch Watch App */;
-		};
-		52B88B612D6CD40F008ACECB /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 52B88B4C2D6CD40D008ACECB /* PortfolioWidgetExtension */;
-		};
-		52B88B642D6CD4F8008ACECB /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"/Localized: Localization/Localizable.strings",
-				"DataController-StoreKit.swift",
-				"DataController-Testing.swift",
-				DataController.swift,
-				"Extensions/Issue-CoreDataHelpers.swift",
-				"Extensions/Tag-CoreDataHelpers.swift",
-				Filters/Filter.swift,
-				Main.xcdatamodeld,
-			);
-			target = 52B88B4C2D6CD40D008ACECB /* PortfolioWidgetExtension */;
-		};
-		52C79ED62CE534CD00778729 /* Exceptions for "UltimatePortfolio" folder in "UltimatePortfolio" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 52370D992CE522C800804D94 /* UltimatePortfolio */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -226,9 +131,6 @@
 		52370D9C2CE522C800804D94 /* UltimatePortfolio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				52C79ED62CE534CD00778729 /* Exceptions for "UltimatePortfolio" folder in "UltimatePortfolio" target */,
-				52B88B642D6CD4F8008ACECB /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetExtension" target */,
-				528D8DA52D6D231A0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "PortfolioWidgetMacExtension" target */,
 				528D8DEF2D6E33FC0084C6D0 /* Exceptions for "UltimatePortfolio" folder in "UPAWatch Watch App" target */,
 			);
 			path = UltimatePortfolio;
@@ -236,9 +138,6 @@
 		};
 		528D8D942D6D22A20084C6D0 /* PortfolioWidgetMac */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				528D8DA32D6D22A40084C6D0 /* Exceptions for "PortfolioWidgetMac" folder in "PortfolioWidgetMacExtension" target */,
-			);
 			path = PortfolioWidgetMac;
 			sourceTree = "<group>";
 		};
@@ -259,10 +158,6 @@
 		};
 		52B88B532D6CD40D008ACECB /* PortfolioWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				52B88B612D6CD40F008ACECB /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetExtension" target */,
-				528D8DAE2D6D234B0084C6D0 /* Exceptions for "PortfolioWidget" folder in "PortfolioWidgetMacExtension" target */,
-			);
 			path = PortfolioWidget;
 			sourceTree = "<group>";
 		};
